@@ -21,4 +21,21 @@ public class UserDaoService {
        return users;
    }
 
+   public User findOne(int id) {
+      for(User user: users) {
+          if (user.getId() == id) {
+              return user;
+          }
+      }
+      return null;
+   }
+
+   public User save(User user) {
+       if (user.getId() != null) {
+           user.setId(++count);
+       }
+       users.add(user);
+       return user;
+   }
+
 }
