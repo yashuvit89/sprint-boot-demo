@@ -1,12 +1,22 @@
 package com.example.demo.user;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Date;
 
+@Entity
 public class User {
 
+    @Id
+    @GeneratedValue
     private Integer id;
+    
     private Date birthDate;
     private String name;
+
+    public User() {
+    }
 
     public User(Integer id, Date birthDate, String name) {
         this.id = id;
